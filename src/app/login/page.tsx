@@ -59,7 +59,7 @@ export default function AuthPage() {
       if (isLogin) {
         await account.createEmailPasswordSession(data.email, data.password);
         alert("Logged in successfully!");
-        router.push("/");
+        router.push("/dashboard");
       } else {
         await account.create(ID.unique(), data.email, data.password);
         await account.createSession(data.email, data.password);

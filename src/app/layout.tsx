@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "./components/footer";
 import Navigation from "./Navigation";
 import MainLayout from "./components/layout";
+import QueryProvider from "./providers/QueryProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="text-white">
         <Navigation />
-        <MainLayout>{children}</MainLayout>
+        <QueryProvider>
+          <MainLayout>{children}</MainLayout>
+        </QueryProvider>
         <Footer />
       </body>
     </html>
